@@ -19,7 +19,7 @@ class Computer: Player {
     
     /// Select the best possibility of game
     internal func bestMove(game: Game, table: [[Sign]], sign: Sign) -> ((Int, Int), Int) {
-        // Get the sign of ennemy
+        // Get the sign of enemy
         let other = sign == .O ? Sign.X : Sign.O
         // Create an array for moves
         var moves = [((Int, Int), Int)]()
