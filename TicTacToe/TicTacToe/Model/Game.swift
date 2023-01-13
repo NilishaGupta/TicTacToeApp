@@ -92,10 +92,8 @@ class Game {
     internal func column(table: [[Sign]], columnIndex: Int) -> Sign {
         let sign = table[0][columnIndex]
         var changed = false
-        for index in 0 ..< 3 {
-            if table[index][columnIndex] != sign {
-                changed = true
-            }
+        for index in 0 ..< 3 where table[index][columnIndex] != sign {
+            changed = true
         }
         if changed {
             return .empty
@@ -107,10 +105,8 @@ class Game {
     internal func row(table: [[Sign]], rowIndex: Int) -> Sign {
         let sign = table[rowIndex][0]
         var changed = false
-        for index in 0 ..< 3 {
-            if table[rowIndex][index] != sign {
-                changed = true
-            }
+        for index in 0 ..< 3 where table[rowIndex][index] != sign {
+            changed = true
         }
         if changed {
             return .empty
@@ -138,10 +134,8 @@ class Game {
     /// Check if the board is full
     internal func full(table: [[Sign]]) -> Bool {
         for x in 0 ..< 3 {
-            for y in 0 ..< 3 {
-                if table[x][y] == .empty {
-                    return false
-                }
+            for y in 0 ..< 3 where table[x][y] == .empty {
+                return false
             }
         }
         return true
